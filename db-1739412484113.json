@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "stdname": "Raj",
+      "stdEmail": "Raj@gmail.com",
+      "stdCourse": "Java Script",
+      "id": 2
+    },
+    {
+      "stdname": "Thippesh",
+      "stdEmail": "thippesh1996@gmail.com",
+      "stdCourse": "Java Full stack",
+      "id": 3
+    },
+    {
+      "stdname": "Thippesh",
+      "stdEmail": "thippesh1996@gmail.com",
+      "stdCourse": "a",
+      "id": 4
+    },
+    {
+      "stdname": "SAM",
+      "stdEmail": "SAM@gmail.com",
+      "stdCourse": "Python ",
+      "id": 5
+    },
+    {
+      "stdname": "swati",
+      "stdEmail": "swati@gmail.com",
+      "stdCourse": "Bioplogy",
+      "id": 6
+    },
+    {
+      "stdname": "RAM",
+      "stdEmail": "RAm@gmail.com",
+      "stdCourse": "Front end technology ",
+      "id": 7
+    }
+  ]
+}

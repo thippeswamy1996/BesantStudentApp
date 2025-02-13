@@ -1,0 +1,156 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+nav{
+    height: 100px;
+    width:100%;
+    background-color: gold;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+
+    }
+    nav>div{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 50%;
+
+
+    }
+    ol{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+       
+    }
+    a{
+        text-decoration: none;
+       
+
+    }
+    #pagenotfound{
+        width: 100%;
+    }
+    img{
+        height: 100%;
+        width: 100%;
+        mix-blend-mode: multiply;
+    }
+    form {
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      fieldset {
+        border: none;
+      }
+      
+      legend {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555;
+      }
+      
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      
+      button {
+        width: 30%;
+        padding: 10px;
+        margin-top: 15px;
+        border: none;
+        background-color: gold;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        color: #333;
+      }
+      
+      button:hover {
+        background-color: #adb300;
+      }
+.viewStudentData{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+#viewhd{
+  text-align: center;
+  
+}
+      /* Apply styles to the student card container */
+.student-card {
+  background-color: #f8f9fab5; /* Light background */
+  border: 2px solid gold;/* Blue border */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styling for student name */
+.student-name {
+  color: #007bff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Styling for email */
+.student-email {
+  color: #28a745;
+  font-size: 16px;
+}
+
+/* Styling for course */
+.student-course {
+  color: #dc3545;
+  font-size: 16px;
+  font-style: italic;
+  flex-wrap: wrap;
+}
+img {
+  height: 100px;
+  width: 50%;
+   mix-blend-mode:multiply;  /* Try removing this */
+  background-color: white; /* Add background to check visibility */
+  /* color: gold; */
+}
+
+      
