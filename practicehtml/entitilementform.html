@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entitlement Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: powderblue;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px; /* Adjusted for a closer label-input pair */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: powderblue;
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #clear {
+            background-color: rgb(255, 157, 0);
+            margin-top: 10px;
+        }
+
+        #clear:hover {
+            background-color: rgb(200, 100, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Entitlement Request</h1>
+    <div class="form-container">
+        <!-- Form Group -->
+        <div class="form-group">
+            <label for="Fname">First Name</label>
+            <input type="text" id="Fname" placeholder="Enter your first name">
+        </div>
+
+        <div class="form-group">
+            <label for="Lname">Last Name</label>
+            <input type="text" id="Lname" placeholder="Enter your last name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email address">
+        </div>
+
+        <div class="form-group">
+            <label for="phonenumber">Phone Number</label>
+            <input type="text" id="phonenumber" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+            <label for="bankName">Bank Name</label>
+            <input type="text" id="bankName" placeholder="Enter your bank name">
+        </div>
+
+        <div class="form-group">
+            <label for="IFSC">IFSC</label>
+            <input type="text" id="IFSC" placeholder="Enter your IFSC code">
+        </div>
+
+        <div class="form-group">
+            <label for="bankadress">Bank Address</label>
+            <input type="text" id="bankadress" placeholder="Enter bank address based on IFSC">
+        </div>
+
+        <div class="form-group">
+            <label for="Bankaccountnumber">Bank Account Number</label>
+            <input type="number" id="Bankaccountnumber" placeholder="Enter your bank account number">
+        </div>
+
+        <div class="form-group">
+            <label for="PAN">PAN</label>
+            <input type="text" id="PAN" placeholder="Enter your PAN number">
+        </div>
+
+        <div class="form-group">
+            <label for="AadhaarNumber">Aadhaar Number</label>
+            <input type="text" id="AadharNumber" placeholder="Enter your Aadhaar number">
+        </div>
+
+        <div class="form-group">
+            <label for="adress">Address</label>
+            <input type="text" id="adress" placeholder="Address based on Aadhaar">
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset" id="clear">Clear</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

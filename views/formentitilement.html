@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entitlement Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .form-group.inline {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-group.inline label {
+            width: 40%; /* Label width */
+            text-align: left;
+        }
+
+        .form-group.inline input {
+            width: 58%; /* Input width */
+        }
+
+        button {
+            width: 30%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #clear {
+            background-color: #dc3545;
+            margin-top: 10px;
+            position: relative;
+            bottom: 6px;
+        }
+
+        #clear:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entitlement Request</h1>
+    <div class="form-container">
+        <form action="your-backend-url" method="POST">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="Fname">First Name</label>
+                <input type="text" id="Fname" placeholder="Enter your first name" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="Lname">Last Name</label>
+                <input type="text" id="Lname" placeholder="Enter your last name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+            </div>
+             
+            <!-- Business Name -->
+            <div class="form-group">
+                <label for="Businessname">Business Name</label>
+                <input type="text" id="Businessname" placeholder="Enter your Business name" required>
+            </div>	
+
+            <!-- Available Scheme Name -->
+            <div class="form-group">
+                <label for="Aviable">Available Scheme Name</label>
+                <input type="text" id="Aviable" placeholder="Enter Scheme Details" required>
+            </div>	
+
+            <!-- Amount -->
+            <div class="form-group">
+                <label for="Amount">Amount in RS</label>
+                <input type="number" id="Amount" placeholder="Enter Amount Details" required>
+            </div>	
+
+            <!-- Phone Number -->
+            <div class="form-group inline">
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" id="phonenumber" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Bank Name -->
+            <div class="form-group">
+                <label for="bankName">Bank Name</label>
+                <input type="text" id="bankName" placeholder="Enter your bank name">
+            </div>
+
+            <!-- IFSC -->
+            <div class="form-group">
+                <label for="IFSC">IFSC</label>
+                <input type="text" id="IFSC" placeholder="Enter your IFSC code">
+            </div>
+
+            <!-- Bank Address -->
+            <div class="form-group">
+                <label for="bankadress">Bank Address</label>
+                <input type="text" id="bankadress" placeholder="Bank address based on entered IFSC">
+            </div>
+
+            <!-- Bank Account Number -->
+            <div class="form-group">
+                <label for="Bankaccountnumber">Bank Account Number</label>
+                <input type="number" id="Bankaccountnumber" placeholder="Enter your bank account number">
+            </div>
+
+            <!-- PAN -->
+            <div class="form-group">
+                <label for="PAN">PAN</label>
+                <input type="text" id="PAN" placeholder="Enter your PAN number">
+            </div>
+
+            <!-- Aadhaar Number -->
+            <div class="form-group">
+                <label for="AadharNumber">Aadhaar Number</label>
+                <input type="text" id="AadharNumber" placeholder="Enter your Aadhaar number">
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="adress">Address</label>
+                <input type="text" id="adress" placeholder="Address based on the entered Aadhaar">
+            </div>
+
+            <!-- Buttons -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" id="clear" class="btn btn-secondary">Clear</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('entitlementForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const Fname = document.getElementById('Fname').value;
+            const Lname = document.getElementById('Lname').value;
+            const email = document.getElementById('email').value;
+            const Businessname = document.getElementById('Businessname').value;
+            const Aviable = document.getElementById('Aviable').value;
+            const Amount = document.getElementById('Amount').value;
+            const phonenumber = document.getElementById('phonenumber').value;
+            const bankName = document.getElementById('bankName').value;
+            const IFSC = document.getElementById('IFSC').value;
+            const bankadress = document.getElementById('bankadress').value;
+            const Bankaccountnumber = document.getElementById('Bankaccountnumber').value;
+            const PAN = document.getElementById('PAN').value;
+            const AadharNumber = document.getElementById('AadharNumber').value;
+            const adress = document.getElementById('adress').value;
+
+            // Store data in localStorage (optional for persistent data across pages)
+            localStorage.setItem('Fname', Fname);
+            localStorage.setItem('Lname', Lname);
+            localStorage.setItem('email', email);
+            localStorage.setItem('Businessname', Businessname);
+            localStorage.setItem('Aviable', Aviable);
+            localStorage.setItem('Amount', Amount);
+            localStorage.setItem('phonenumber', phonenumber);
+            localStorage.setItem('bankName', bankName);
+            localStorage.setItem('IFSC', IFSC);
+            localStorage.setItem('bankadress', bankadress);
+            localStorage.setItem('Bankaccountnumber', Bankaccountnumber);
+            localStorage.setItem('PAN', PAN);
+            localStorage.setItem('AadharNumber', AadharNumber);
+            localStorage.setItem('adress', adress);
+
+            // Redirect to Admin Dashboard
+            window.location.href = 'AdminDashboard.html';
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

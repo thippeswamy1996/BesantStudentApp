@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <table border="1" cellspacing="2px" cellpadding="2px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Business Type</th>
+                <th>Required Funds</th>
+                <th>Bank Account Details</th>
+                <th>Address</th>
+                <th>Identification Details</th>
+                <th>Approval Status</th>
+            </tr>
+        </thead>
+        <tbody id="userRequests">
+            <!-- Dynamically populated rows -->
+        </tbody>
+    </table>
+</body>
+<script>
+    // Example dynamic population (to be implemented with back-end data)
+    const userData = [
+        { 
+            name: 'John Doe', email: 'john@example.com', phone: '1234567890',
+            businessType: 'Retail', requiredFunds: 50000, 
+            bankAccountDetails: '123456789', address: '123 St, City', idDetails: 'ID1234'
+        }
+    ];
+
+    const tbody = document.getElementById('userRequests');
+    userData.forEach(data => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${data.name}</td>
+                <td>${data.email}</td>
+                <td>${data.phone}</td>
+                <td>${data.businessType}</td>
+                <td>${data.requiredFunds}</td>
+                <td>${data.bankAccountDetails}</td>
+                <td>${data.address}</td>
+                <td>${data.idDetails}</td>
+                <td>
+                    <form action="/adminApproval" method="POST">
+                        <input type="hidden" name="email" value="${data.email}">
+                        <select name="approvalStatus" required>
+                            <option value="">Select</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Denied">Deny</option>
+                        </select>
+                        <br><br>
+                        <textarea name="remarks" placeholder="Enter remarks here..."></textarea>
+                        <br><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                </td>
+            </tr>
+        `;
+    });
+</script>
+</html>
