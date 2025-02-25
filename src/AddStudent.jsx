@@ -4,66 +4,66 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
-  let navigate = useNavigate();
-  let [stdname, setStudentdata] = useState("");
-  let [stdEmail, setstdEmail] = useState("");
-  let [stdCourse, setstdCourse] = useState("");
+  const navigate = useNavigate();
+  const [stdname, setStudentdata] = useState("");
+  const [stdEmail, setstdEmail] = useState("");
+  const [stdCourse, setstdCourse] = useState("");
 
-  let HandleForm = (e) => {
+  const HandleForm = (e) => {
     e.preventDefault();
-    let payLoad = {
-      stdname,
-      stdEmail,
-      stdCourse,
-    };
+    const payLoad = { stdname, stdEmail, stdCourse };
 
-    axios.post("http://localhost:4000/posts", payLoad);
-
-    navigate("ViewStudents");
-    toast.success({ stdname }, " is Added successfully", {
-      posittion: "top-right",
-    });
+    axios
+      .post("http://localhost:4000/posts", payLoad)
+      .then(() => {
+        toast.success(`${stdname} is Added successfully!`, {
+          position: "top-right",
+        });
+        navigate("/ViewStudents"); // Redirect after success
+      })
+      .catch((error) => {
+        console.error("Error adding student:", error);
+        toast.error("Failed to add student. Please try again.", {
+          position: "top-right",
+        });
+      });
   };
 
   return (
     <div>
       <ToastContainer />
-      <form action="">
+      <form onSubmit={HandleForm}>
         <fieldset>
           <legend>Add Student Data</legend>
-          <label htmlFor="">Student Name</label>
-          <br></br>
+
+          <label htmlFor="name">Student Name</label>
           <input
             type="text"
             id="name"
-            onChange={(e) => {
-              {
-                setStudentdata(e.target.value);
-              }
-            }}
-          ></input>
-          <label htmlFor="Email">Email</label>
-          <br></br>
+            value={stdname}
+            onChange={(e) => setStudentdata(e.target.value)}
+            required
+          />
+
+          <label htmlFor="email">Email</label>
           <input
-            type="text"
-            id="Email"
-            onChange={(e) => {
-              {
-                setstdEmail(e.target.value);
-              }
-            }}
-          ></input>
-          <label htmlFor="course">Couser</label>
-          <br></br>
+            type="email"
+            id="email"
+            value={stdEmail}
+            onChange={(e) => setstdEmail(e.target.value)}
+            required
+          />
+
+          <label htmlFor="course">Course</label>
           <input
             type="text"
             id="course"
-            onChange={(e) => {
-              setstdCourse(e.target.value);
-            }}
-          ></input>
-          <br></br>
-          <button onClick={HandleForm}>AddStudentData</button>
+            value={stdCourse}
+            onChange={(e) => setstdCourse(e.target.value)}
+            required
+          />
+
+          <button type="submit">Submit</button>
         </fieldset>
       </form>
     </div>

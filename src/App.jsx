@@ -3,6 +3,7 @@ import Nav from './Nav'
  import { ToastContainer, toast } from 'react-toastify/unstyled'
  import { BrowserRouter as Router ,Routes ,Route } from 'react-router-dom'
  import "./global.css";
+ import "./login.css";
  import Home from './Home';
  
 

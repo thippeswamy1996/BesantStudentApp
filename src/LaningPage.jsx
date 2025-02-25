@@ -27,7 +27,7 @@ const LaningPage = () => {
                   <Route path='/ViewStudents' element={<ViewStudents/>}/>
                  
                   <Route path='/AddStudent' element={<AddStudent/>}/>
-                  <Route path='/AddStudent' element={<UpdateStudentdata/>}/>
+                  <Route path='/UpdateStudentdata/:id' element={<UpdateStudentdata/>}/>
                   {/* <Route path='*' element={<Pagenotfound/>}/> */}
 
               </Routes>
